@@ -1,0 +1,71 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+body {
+    background-color: #0B1E26;
+    color: #E8DFD0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, h3 {
+    color: #FF7D25;
+    font-family: "Space Grotesk", sans-serif;
+  }
+  
+  a {
+    color: #1A6FB5;
+  }
+  
+  a:hover {
+    color: #FF7D25;
+  }
+ #site-header {
+    padding: 40px 20px;
+    border-bottom: 2px solid #FF7D25
+    text-align: center:;
+ }
+
+ .page-title {
+    font-size: 3em; 
+    font-weight: 700;
+    margin-bottom: 8px
+ }
+
+ .intro-text {
+    font-size: 1.2em;
+    color: #1a6fb5;
+ }
+
+ .section-heading {
+    font-size: 1.75em;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-left: 20px;
+ }
+ .planet-list {
+    padding: 0 20px;
+ }
+
+ .planet-card {
+    background-color: #112b36;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 4px solid #FF7D25;
+    border-radius: 6px;
+    list-style: none;
+ }
+
+ h1{ 
+    font-size: 1.75em;
+    font-weight: 500;
+ }
+
+ p{
+    font-size: 1em;
+    line-height: 1.6;
+ }
