@@ -8,23 +8,11 @@
 
 
 
-.timer-header,
-.site-nav {
+.timer-header {
   padding: 14px 20px;
   background-color: #112b36;
-  border-bottom: 2px solid #FF7D25;
-}
-
-.timer-header {
+  border-bottom: 2px solid #ff7d25;
   text-align: center;
-}
-
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  justify-content: center;
-  align-items: center;
 }
 
 .timer-header a,
@@ -33,14 +21,75 @@
   font-weight: 600;
 }
 
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Full-page stars (home) — behind header + main */
+.star-field--page {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Sidebar nav: stars sit under links */
+.star-field--nav {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
 body {
   background-color: #0b1e26;
-  color: #E8DFD0;
+  color: #e8dfd0;
   font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+}
+
+/* Stack home content above full-page star field */
+body:has(> .star-field--page) > #site-header,
+body:has(> .star-field--page) > main {
+  position: relative;
+  z-index: 1;
+}
+
+
+body:has(> nav.site-nav) {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+body:has(> nav.site-nav) > main {
+  flex: 1;
+  min-width: 0;
+  padding-top: 24px;
+  padding-bottom: 32px;
 }
 
 h1,
@@ -61,7 +110,7 @@ a:hover {
 #site-header {
   padding: 40px 20px;
   border-bottom: 4px solid #FF7D25;
-  background-image: url(../images/timberhearth.jpg);
+  background-image: url(../images/index.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -134,37 +183,165 @@ p {
 }
 
 /* ** ======================================================== **
-** SITE NAV STYLES **
+** SITE NAV — vertical sidebar (desktop), compact strip (mobile) **
 ** ======================================================== ** */
 
 .site-nav {
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 12px 16px;
-  background-color: #1A1A2E;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 2px;
+  width: min(240px, 32vw);
+  flex: 0 0 auto;
+  padding: 20px 14px 24px;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #071015 0%, #0b1e26 48%, #0a181f 100%);
+  border-right: 1px solid rgba(226, 160, 74, 0.35);
   position: sticky;
   top: 0;
+  align-self: flex-start;
+  height: 100vh;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   z-index: 100;
-  border-bottom: 2px solid #e2a04a;
+  scrollbar-gutter: stable;
 }
 
 .site-nav a {
-  color: #e2a04a;
+  display: block;
+  color: rgba(232, 223, 208, 0.88);
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 8px 10px;
   border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background-color 0.2s;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .site-nav a:hover {
-  background-color: #e2a04a33;
+  color: #e2a04a;
+  background-color: rgba(226, 160, 74, 0.1);
+}
+
+.nav-home-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(226, 160, 74, 0.22);
+}
+
+.nav-home-link {
+  flex: 1;
+  min-width: 0;
+}
+
+.site-nav .nav-timer-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
+  border-radius: 8px;
+  color: rgba(232, 223, 208, 0.92);
+  background-color: rgba(226, 160, 74, 0.08);
+  border: 1px solid rgba(226, 160, 74, 0.28);
+}
+
+.site-nav .nav-timer-icon:hover {
+  color: #e2a04a;
+  background-color: rgba(226, 160, 74, 0.16);
+  border-color: rgba(226, 160, 74, 0.45);
+}
+
+.site-nav .nav-timer-icon[aria-current="page"] {
+  color: #e2a04a;
+  background-color: rgba(226, 160, 74, 0.14);
+  border-color: rgba(226, 160, 74, 0.5);
+}
+
+.site-nav .nav-timer-icon svg {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  body:has(> nav.site-nav) {
+    flex-direction: column;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    padding: 10px 12px;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-right: none;
+    border-bottom: 1px solid rgba(226, 160, 74, 0.35);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: auto;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    padding: 8px 12px;
+  }
+
+  .nav-home-bar {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    border-right: 1px solid rgba(226, 160, 74, 0.22);
+    padding-right: 10px;
+    margin-right: 4px;
+  }
+
+  .nav-home-bar .nav-home-link {
+    flex: 0 1 auto;
+  }
 }
 
 .content-container {
   max-width: 1200px;
-  margin: auto;
+  margin:0;
+  margin-top:20px;
+  padding:40px;
+}
+
+.content-container.home {
+  margin:0 auto;
+}
+
+/* Planet journal pages: consistent title + intro under sidebar (matches Timber Hearth) */
+main.content-container > .site-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+main.content-container > .site-header > h1 {
+  margin: 0;
+}
+
+main.content-container > .site-header > p {
+  margin: 0;
 }
 
 /* ** ======================================================== **
@@ -233,7 +410,7 @@ p {
 .note-submit {
   margin-top: 8px;
   background-color: #e2a04a;
-  color: #1a1a2e;
+  color: #071015;
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
