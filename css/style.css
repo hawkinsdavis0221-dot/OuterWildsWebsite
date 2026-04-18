@@ -1,6 +1,13 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+
+
 .timer-header,
 .site-nav {
   padding: 14px 20px;
@@ -27,77 +34,112 @@
 }
 
 body {
-    background-color: #0B1E26;
-    color: #E8DFD0;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  h1, h2, h3 {
-    color: #FF7D25;
-    font-family: "Space Grotesk", sans-serif;
-  }
-  
-  a {
-    color: #1A6FB5;
-  }
-  
-  a:hover {
-    color: #FF7D25;
-  }
- #site-header {
-    padding: 40px 20px;
-    border-bottom: 2px solid #FF7D25
-    text-align: center:;
- }
+  background-color: #0b1e26;
+  color: #E8DFD0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
- .page-title {
-    font-size: 3em; 
-    font-weight: 700;
-    margin-bottom: 8px
- }
+h1,
+h2,
+h3 {
+  color: #FF7D25;
+  font-family: "Space Grotesk", sans-serif;
+}
 
- .intro-text {
-    font-size: 1.2em;
-    color: #1a6fb5;
- }
+a {
+  color: #1A6FB5;
+}
 
- .section-heading {
-    font-size: 1.75em;
-    font-weight: 500;
-    margin-top: 32px;
-    margin-bottom: 16px;
-    padding-left: 20px;
- }
- .planet-list {
-    padding: 0 20px;
- }
+a:hover {
+  color: #FF7D25;
+}
 
- .planet-card {
-    background-color: #112b36;
-    padding: 16px 20px;
-    margin-bottom: 12px;
-    border-left: 4px solid #FF7D25;
-    border-radius: 6px;
-    list-style: none;
- }
-
- h1{ 
-    font-size: 1.75em;
-    font-weight: 500;
- }
-
- p{
-    font-size: 1em;
-    line-height: 1.6;
- }
-
- .site-nav {
+#site-header {
+  padding: 40px 20px;
+  border-bottom: 4px solid #FF7D25;
+  background-image: url(../images/timberhearth.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
   display: flex;
-  gap: 8px; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 0px
+}
+
+.intro-text {
+  margin-top: -5px;
+  font-size: 1.2em;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.planet-list {
+  padding: 0 20px;
+}
+
+.planet-list-header {
+  margin-bottom: 40px;
+}
+
+.planet-list-header p {
+  margin-top: 0px;
+  margin-left: 20px;
+
+}
+
+.planet-list-header h2 {
+  margin-left: 20px;
+  font-size: 3em;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.planet-card {
+  background-color: #112b36;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-left: 4px solid #FF7D25;
+  border-radius: 6px;
+  list-style: none;
+}
+
+.resources-section {
+  margin-left: 20px;
+  margin-top: 60px;
+  padding-top: 10px;
+  border-top: 1px solid white;
+}
+
+h1 {
+  font-size: 1.75em;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+/* ** ======================================================== **
+** SITE NAV STYLES **
+** ======================================================== ** */
+
+.site-nav {
+  display: flex;
+  gap: 8px;
   flex-wrap: wrap;
   padding: 12px 16px;
   background-color: #1A1A2E;
@@ -105,8 +147,9 @@ body {
   top: 0;
   z-index: 100;
   border-bottom: 2px solid #e2a04a;
- }
- .site-nav a {
+}
+
+.site-nav a {
   color: #e2a04a;
   text-decoration: none;
   padding: 6px 12px;
@@ -118,12 +161,28 @@ body {
 .site-nav a:hover {
   background-color: #e2a04a33;
 }
+
+.content-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ** ======================================================== **
+** NOTE HEADER SECTION STYLES **
+** ======================================================== ** */
+
+.notes-section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 .notes-list {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  
 }
 
 .note-card {
@@ -132,7 +191,20 @@ body {
   border-radius: 8px;
   padding: 12px 16px;
   color: #cccccc;
+  margin-bottom:8px;
+  width: 60%;
 }
+
+/* ** ======================================================== **
+** NOTE FORM SECTION STYLES **
+** ======================================================== ** */
+
+
+.note-form-section {
+  margin-bottom: 60px; 
+  border-top: 1px solid white;
+}
+
 .note-form {
   margin-top: 16px;
   display: flex;
@@ -142,6 +214,7 @@ body {
 }
 
 .note-input {
+  margin-top:8px;
   background-color: #16213e;
   border: 1px solid #333;
   border-radius: 6px;
@@ -158,6 +231,7 @@ body {
 }
 
 .note-submit {
+  margin-top: 8px;
   background-color: #e2a04a;
   color: #1a1a2e;
   border: none;
