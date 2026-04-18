@@ -1,0 +1,25 @@
+{
+  "name": "outerwildswebsite",
+  "version": "1.0.0",
+  "description": "Website for tracking outer wilds progress",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawkinsdavis0221-dot/OuterWildsWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hawkinsdavis0221-dot/OuterWildsWebsite/issues"
+  },
+  "homepage": "https://github.com/hawkinsdavis0221-dot/OuterWildsWebsite#readme",
+  "devDependencies": {
+    "vite": "^8.0.8"
+  }
+}

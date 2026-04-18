@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Timber Hearth — Exploration Journal</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <nav class="site-nav">
     <a href="../index.html">Home</a>
@@ -23,33 +29,36 @@
     <a href="the-interloper.html">The Interloper</a>
     <a href="sun-station.html">Sun Station</a>
   </nav>
+  <main class="content-container">
+    <header class="site-header">
+      <h1>🌲 Timber Hearth</h1>
 
-  <h1>🌲 Timber Hearth</h1>
+      <p>
+        The home planet of the Hearthians. A small, forested world dotted with
+        geysers and a cozy village nestled at the base of a crater. The perfect
+        place to start any space adventure.
+      </p>
+    </header>
 
-  <p>
-    The home planet of the Hearthians. A small, forested world dotted with
-    geysers and a cozy village nestled at the base of a crater. The perfect
-    place to start any space adventure.
-  </p>
+    <div class="notes-section">
+      <h2>My Notes</h2>
 
-  <h2>My Notes</h2>
+      <ul class="notes-list">
+        <li class="note-card">Found the village at the base of the geyser</li>
+        <li class="note-card">The observatory has a cool telescope</li>
+      </ul>
+    </div>
 
-  <ul class="notes-list">
-    <li class="note-card">Found the village at the base of the geyser</li>
-    <li class="note-card">The observatory has a cool telescope</li>
-  </ul>
+    <div class="note-form-section">
+      <h3>Add a Note</h3>
 
-  <h3>Add a Note</h3>
-
-  <form class="note-form">
-    <textarea
-      class="note-input"
-      placeholder="Write something you discovered..."
-      rows="3"
-    ></textarea>
-    <button type="submit" class="note-submit">Save Note</button>
-  </form>
-  <!-- TODO: Make this actually save notes in Lesson 6 -->
-
+      <form class="note-form">
+        <textarea class="note-input" placeholder="Write something you discovered..." rows="12"></textarea>
+        <button type="submit" class="note-submit">Save Note</button>
+      </form>
+    </div>
+    <!-- TODO: Make this actually save notes in Lesson 6 -->
+  </main>
 </body>
+
 </html>
